@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --blue: #4073de;
+    /* --blue: rgb(64, 115, 222);*/
+    --navlink1: #ae5cfc;
+    --navlinks2: #155ed1;
+    --lightorange: #ffaf00;
+    /*--lightorange: rgb(255, 175, 0);*/
+    --orange: #ff8615;
+    /*--orange: rgb(255, 134, 21);*/
+    --lightred: #ff2f4f;
+    /*--lightred: rgb(255, 47, 79);*/
+    --red: #ff1b99;
+    /*--red: rgb(255, 27, 153);*/
+    --lightviolet: #fe14e5;
+    /* --lightviolet: rgb(254, 20, 229);*/
+    --violet: #b61fe0;
+    /*--violet: rgb(182, 31, 224);*/
+    /*rgb(182, 31, 224);*/
+    --lightgray: #f3f3f3;
+    --text: #505050;
+    --black: #000;
+    --white: #fff;
+    --transition: .2s ease;
+    --fontSize: 14px;
+    --headings: 'Montserrat', sans-serif;
+    --bodyText: 'Roboto', sans-serif;
+    --padddingY: 30px 0;
+}
+
+/************************
+    basic styles
+************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--bodyText);
+    font-size: var(--fontSize);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    font-family: var(--headings);
+
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.row-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.column-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+p {
+    font-family: var(--bodyText);
+}
+
+button {
+    background: linear-gradient(to right, rgb(255, 175, 0), rgb(255, 134, 21));
+    color: var(--white);
+    margin-top: 30px;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    border: none;
+    transition: var(--transition);
+}
+
+button:hover {
+    opacity: .8;
+}
+
+/***nav***/
+nav h1 a {
+    font-size: 2rem;
+    color: var(--blue);
+}
+
+nav nav h1 i {
+    font-size: .5rem;
+}
+
+
+
+nav ul li {
+    margin-left: 20px;
+    display: flex;
+    justify-content: stretch;
+    align-self: stretch;
+}
+
+nav ul li a {
+    font-size: 1rem;
+    color: var(--black);
+    font-weight: 600;
+    padding: 30px 10px;
+    transition: var(--transition);
+}
+
+nav ul li a:hover {
+    color: var(--white);
+    background: linear-gradient(rgb(182, 31, 224), rgb(64, 115, 222));
+}
+
+header {
+    background: url(img/header.png);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+/***topics***/
+.topics {
+    color: var(--white);
+}
+
+.topics article {
+    flex: 0 0 24%;
+    padding: 15px;
+    margin-top: -100px;
+    align-items: flex-end;
+}
+
+.topics article:nth-child(1) {
+    background: linear-gradient(rgb(182, 31, 224), rgb(64, 115, 222));
+}
+
+.topics article:nth-child(2) {
+    background: linear-gradient(rgb(255, 175, 0), rgb(255, 134, 21));
+}
+
+.topics article:nth-child(3) {
+    background: linear-gradient(rgb(255, 47, 79), rgb(255, 27, 153));
+}
+
+.topics article:nth-child(4) {
+    background: linear-gradient(rgb(254, 20, 229), rgb(182, 31, 224));
+}
+
+.topics article div:first-child {
+    flex: 0 0 80%;
+}
+
+.topics article div:last-child {
+    flex: 0 0 15%;
+}
+
+.topics article div i {
+    font-size: 1.7rem;
+}
+
+.topics h2 {
+    font-size: 1.5rem;
+}
+
+.topics p {
+    padding-top: 10px;
+}
+
+/***welcome***/
+.welcome {
+    padding: var(--padddingY);
+}
+
+.welcome article {
+    flex: 0 0 49%;
+    align-items: flex-start;
+    height: 60vh;
+}
+
+.welcome article:first-child {
+    background: var(--lightgray);
+    padding: 30px;
+}
+
+
+.welcome article:last-child {
+    background: url(img/water-polo-player.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.welcome h2 {
+    font-size: 2rem;
+    padding-bottom: 20px;
+}
+
+/***lessons***/
+.lessons {
+    padding: var(--padddingY);
+}
+
+.lessons article {
+    flex: 0 0 49%;
+    align-items: flex-start;
+    height: 60vh;
+}
+
+.lessons article:last-child {
+    background: var(--lightgray);
+    padding: 30px;
+}
+
+
+.lessons article:first-child {
+    background: url(img/swimer.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.lessons h2 {
+    font-size: 2rem;
+    padding-bottom: 20px;
+}
+
+/***why***/
+.why {
+    background: url(img/swimer2.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.why article {
+    flex: 0 0 49%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 100px 30px;
+    color: var(--white);
+}
+
+.why h2 {
+    font-size: 2rem;
+    padding-bottom: 20px;
+}
+
+.why article:first-child {
+    background: linear-gradient(to top, rgb(254, 20, 229, .8), rgba(255, 47, 79, .8));
+}
+
+.why article:first-child button {
+    background: var(--lightgray);
+    color: var(--black);
+}
+
+/***events***/
+
+.events {
+    padding: var(--padddingY);
+}
+
+.events article {
+    flex: 0 0 49%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 80px 30px;
+    color: var(--white);
+    height: 60vh;
+}
+
+.events h2 {
+    font-size: 2rem;
+    padding-bottom: 20px;
+}
+
+
+.events article:first-child {
+    background: linear-gradient(to top, rgb(255, 134, 21), rgb(255, 175, 0));
+    color: var(--white);
+}
+
+.events article:first-child ul li {
+    padding-bottom: 20px;
+}
+
+.events article:last-child {
+    background: url(img/swimer3.png);
+    background-position: center;
+    background-size: cover;
+}
