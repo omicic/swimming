@@ -52,7 +52,11 @@ h5,
 h6 {
     font-weight: 600;
     font-family: var(--headings);
+}
 
+h2 {
+    font-size: 2.5rem;
+    padding-bottom: 20px;
 }
 
 ul {
@@ -80,11 +84,12 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+
 }
 
 p {
     font-family: var(--bodyText);
+    font-size: 1.3rem;
 }
 
 button {
@@ -101,6 +106,7 @@ button:hover {
     opacity: .8;
 }
 
+
 /***nav***/
 nav h1 a {
     font-size: 2rem;
@@ -110,8 +116,6 @@ nav h1 a {
 nav nav h1 i {
     font-size: .5rem;
 }
-
-
 
 nav ul li {
     margin-left: 20px;
@@ -128,6 +132,11 @@ nav ul li a {
     transition: var(--transition);
 }
 
+nav ul li .active {
+    color: var(--white);
+    background: linear-gradient(rgb(182, 31, 224), rgb(64, 115, 222));
+}
+
 nav ul li a:hover {
     color: var(--white);
     background: linear-gradient(rgb(182, 31, 224), rgb(64, 115, 222));
@@ -140,14 +149,29 @@ header {
     height: 100vh;
 }
 
+@media(max-width:767px) {
+
+    nav.row-flex,
+    .topics,
+    .why,
+    .lessons,
+    .events,
+    .team,
+    .contact {
+        flex-wrap: wrap;
+    }
+}
+
 /***topics***/
 .topics {
     color: var(--white);
+    padding-bottom: 30px;
+    margin-top: -100px
 }
 
 .topics article {
     flex: 0 0 24%;
-    padding: 15px;
+    padding: 30px;
     margin-top: -100px;
     align-items: flex-end;
 }
@@ -177,20 +201,39 @@ header {
 }
 
 .topics article div i {
-    font-size: 1.7rem;
-}
-
-.topics h2 {
-    font-size: 1.5rem;
+    font-size: 3rem;
 }
 
 .topics p {
-    padding-top: 10px;
+    padding: 10px 0;
+}
+
+@media(max-width:767px) {
+
+    .topics article {
+        flex: 1;
+        margin: 0;
+    }
 }
 
 /***welcome***/
-.welcome {
-    padding: var(--padddingY);
+
+@media(max-width:767px) {
+
+    .welcome,
+    .lessons,
+    .events {
+        flex-wrap: wrap;
+    }
+
+    .welcome article:first-child,
+    .welcome article:last-child,
+    .lessons article:first-child,
+    .lessons article:last-child,
+    .events article:first-child,
+    .events article:last-child {
+        flex: 0 0 100%;
+    }
 }
 
 .welcome article {
@@ -211,10 +254,6 @@ header {
     background-size: cover;
 }
 
-.welcome h2 {
-    font-size: 2rem;
-    padding-bottom: 20px;
-}
 
 /***lessons***/
 .lessons {
@@ -239,12 +278,17 @@ header {
     background-size: cover;
 }
 
-.lessons h2 {
-    font-size: 2rem;
-    padding-bottom: 20px;
-}
 
 /***why***/
+
+@media(max-width: 767px) {
+
+    .why article:first-child,
+    .why article:last-child {
+        flex: 0 0 100%;
+    }
+}
+
 .why {
     background: url(img/swimer2.png);
     background-position: center;
@@ -255,17 +299,12 @@ header {
     flex: 0 0 49%;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 100px 30px;
     color: var(--white);
-}
-
-.why h2 {
-    font-size: 2rem;
-    padding-bottom: 20px;
 }
 
 .why article:first-child {
     background: linear-gradient(to top, rgb(254, 20, 229, .8), rgba(255, 47, 79, .8));
+    padding: 100px 30px;
 }
 
 .why article:first-child button {
@@ -282,34 +321,43 @@ header {
 .events article {
     flex: 0 0 49%;
     align-items: flex-start;
-    justify-content: flex-start;
-    padding: 80px 30px;
-    color: var(--white);
     height: 60vh;
 }
-
-.events h2 {
-    font-size: 2rem;
-    padding-bottom: 20px;
-}
-
 
 .events article:first-child {
     background: linear-gradient(to top, rgb(255, 134, 21), rgb(255, 175, 0));
     color: var(--white);
+    padding: 30px;
 }
 
 .events article:first-child ul li {
     padding-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.events article:first-child ul li i {
+    font-size: 1.2rem;
 }
 
 .events article:last-child {
     background: url(img/swimer3.png);
     background-position: center;
     background-size: cover;
+
 }
 
 /***team***/
+
+@media(max-width: 767px) {
+    .team {
+        flex-direction: column;
+    }
+
+    .team article {
+        flex: 0 0 100%;
+        padding-top: 30px;
+    }
+}
 
 .team article {
     flex: 0 0 24%;
@@ -341,6 +389,14 @@ header {
 }
 
 /***contact***/
+@media(max-width: 767px) {
+
+    .contact article:first-child,
+    .contact article:last-child {
+        flex: 0 0 100%;
+    }
+}
+
 .contact {
     padding: var(--padddingY);
 }
@@ -348,15 +404,16 @@ header {
 .contact article {
     flex: 0 0 49%;
     align-items: flex-start;
-    justify-content: flex-start;
-    padding: 50px 30px;
     color: var(--white);
-    height: 60vh;
 }
 
-.contact h2 {
-    font-size: 2rem;
-    padding-bottom: 20px;
+.contact article:first-child {
+    padding: 50px 30px;
+}
+
+iframe {
+    width: 100%;
+    display: block;
 }
 
 .contact article:first-child {
@@ -367,7 +424,6 @@ header {
     font-size: 1rem;
     padding-bottom: 10px;
     font-weight: 300;
-
 }
 
 .contact article:first-child p:nth-child(4) {
@@ -378,7 +434,7 @@ header {
 
 .contact article:first-child ul li {
     margin-left: 10px;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
 }
 
 
@@ -401,4 +457,11 @@ header {
 
 .contact article:first-child ul li a:hover {
     opacity: .8;
+}
+
+/***footer***/
+footer {
+    text-align: center;
+    color: lightslategray;
+    padding: var(--padddingY);
 }
